@@ -10,9 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161001151346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "name",                          null: false
+    t.integer  "remaining_pages", default: 100
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "inscriptions", force: :cascade do |t|
+    t.integer  "spell_id",   null: false
+    t.integer  "book_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spell_id", "book_id"], name: "index_inscriptions_on_spell_id_and_book_id", unique: true, using: :btree
+  end
+
+  create_table "spells", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "level",      null: false
+    t.string   "url",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
