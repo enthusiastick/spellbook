@@ -7,7 +7,7 @@ class Spell extends Component {
 
   render() {
     return (
-      <li>{this.props.name}</li>
+      <li onClick={this.props.onClick}>{this.props.name}</li>
     );
   }
 }
