@@ -1,13 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 
 $(function() {
   ReactDOM.render(
-    <h1 className="text-center">
-      Boo yaa
-      <i className="fa fa-camera-retro" />
-    </h1>,
+    <App />,
     document.getElementById('app')
   );
 });
