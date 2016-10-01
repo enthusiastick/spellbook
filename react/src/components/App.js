@@ -11,7 +11,6 @@ class App extends React.Component {
     return(
       <div>
         <Header />
-        <hr/>
         <Catalog />
       </div>
       );

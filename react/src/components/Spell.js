@@ -7,7 +7,13 @@ class Spell extends Component {
 
   render() {
     return (
-      <li onClick={this.props.onClick}>{this.props.name}</li>
+      <li onClick={this.props.onClick}>
+        {this.props.name}
+        &nbsp;
+        <a href={this.props.url} target="_blank">
+          <i className="fa fa-external-link" />
+        </a>
+      </li>
     );
   }
 }

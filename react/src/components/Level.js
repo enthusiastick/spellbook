@@ -28,6 +28,7 @@ class Level extends Component {
         <Spell
           key={spell.id}
           name={spell.name}
+          url={spell.url}
           onClick={onClick}
         />)
       }
@@ -52,7 +53,7 @@ class Level extends Component {
 
     });
     return (
-      <div>
+      <div className="callout">
         <h3 className="text-center">Level {this.props.level}</h3>
         <div className="row">
           <div className="small-6 columns">
